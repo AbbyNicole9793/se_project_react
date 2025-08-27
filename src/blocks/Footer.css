@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "cabinetGrotesk";
+    src: url("../fonts/cabinet-grotesk-webfont/CabinetGrotesk-Medium.woff");
+    font-weight: 500;
+}
+
+.footer {
+    font-family: "cabinetGrotesk", Arial, Helvetica;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__main {
+    margin: 171px 0 0 0;
+}
+
+.footer__year {
+    margin: 171px 0 0 0;
+}

@@ -1,0 +1,108 @@
+@font-face {
+    font-family: "cabinetGrotesk";
+    src: url("../fonts/cabinet-grotesk-webfont/CabinetGrotesk-Bold.woff");
+    font-weight: 700;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    visibility: hidden;
+    transition: visibility 0s linear .5s, opacity .5s linear;
+    opacity: 0;
+}
+
+.modal_is-opened {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.modal__content {
+    background-color: #fff;
+    width: 496px;
+    max-height: 436px;
+    border-radius: 20px;
+    position: relative;
+    padding: 28px 28px 36px;
+}
+
+.modal__title {
+    font-size: 16px;
+    font-family: "cabinetGrotesk", Arial, Helvetica;
+    line-height: 20px;
+    margin: 0;
+}
+
+.modal__close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.modal__close-btn {
+    width: 20px;
+    max-height: 20px;
+}
+
+.modal__form {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modal__label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: "cabinetGrotesk", Arial, Helvetica;
+}
+
+.modal__label_type_radio {
+    display: flex;
+    flex-direction: row;
+}
+
+.modal__input {
+    display: block;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #000;
+    width: 100%;
+}
+
+.modal__radio-button {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin: 0 0 8px 0;
+    padding: 0;
+    gap: 8px;
+}
+
+.modal__legend {
+    margin-bottom: 12px;
+}
+
+.modal__submit-btn {
+    width: 124px;
+    max-height: 36px;
+    border: none; 
+    background-color: rgba(0, 0, 0, .3);
+    padding: 8px 16px;
+    color: #fff;
+    font-family: "cabinetGrotesk", Arial, Helvetica;
+    border-radius: 4px;
+}

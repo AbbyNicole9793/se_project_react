@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "CabinetGrotesk";
+    src: url("../fonts/cabinet-grotesk-webfont/CabinetGrotesk-Bold.woff");
+    font-weight: 700;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    max-height: 40px;
+    padding: 32px 0 28px 0;
+}
+
+.header__logo {
+    margin-right: 24px;
+}
+
+.header__paragraph {
+    margin: 0;
+    font-family: "CabinetGrotesk", Arial, Helvetica;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.header__button {
+    margin-left: auto;
+    border: none;
+    font-family: "CabinetGrotesk", Arial, Helvetica;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.header__user-container {
+    display: flex;
+    align-items: center;
+}
+
+.header__username {
+    margin: 0 0 0 20px;
+    font-family: "CabinetGrotesk", Arial, Helvetica;
+    font-size: 20px;
+}
+
+.header__avatar {
+    margin-left: 12px;
+    position: relative;
+}
+
+.header__avatar-hover {
+    opacity: 0%;
+    position: absolute;
+    right: 40px;
+}
