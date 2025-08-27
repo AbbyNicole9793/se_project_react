@@ -12,10 +12,10 @@ function Main({ weatherData, handleCardPreview}) {
             <ul className="cards__list">
                 {defaultClothingItems
                 .filter((item) => {
-                    return item.weather === weatherData.type
+                    return  item.weather === weatherData.type
                 })
                 .map((item) => {
-                    return (<ItemCard key={item.id} item={item} handleCardPreview={handleCardPreview}/>)
+                    return (<ItemCard key={item._id} item={item} handleCardPreview={handleCardPreview}/>)
                 })}
             </ul>
         </section>

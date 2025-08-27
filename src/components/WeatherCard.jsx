@@ -1,5 +1,5 @@
 import sunny from "../images/weatherCard.svg"
-import "../blocks/weatherCard.css"
+import "../blocks/WeatherCard.css"
 
 function WeatherCard({weatherData}) {
     return (
