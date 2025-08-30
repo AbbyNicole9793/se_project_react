@@ -31,3 +31,17 @@
     line-height: 24px;
     font-family: "cabinetGrotesk", Arial, Helvetica;
 }
+
+@media screen and (max-width: 750px) {
+    .modal__content_type_image {
+        max-width: 343px;
+        max-height: 463px;
+        position: absolute;
+        top: 180px;
+    }
+
+    .modal__image {
+        max-width: 343px;
+    }
+    
+}

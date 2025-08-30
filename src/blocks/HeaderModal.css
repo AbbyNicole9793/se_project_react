@@ -1,0 +1,53 @@
+.header__modal {
+    width: 343px;
+    max-height: 208px;
+    margin: 18px auto 20px;
+    z-index: 1;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1)
+}
+
+.header-modal__block-secondary {
+    visibility: visible;
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    top: 60px;
+    right: 60px;
+}
+
+.header-modal__button {
+    background-color: #fff;
+    margin: 0;
+    border: none;
+    font-family: "CabinetGrotesk", Arial, Helvetica;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.header-modal__user-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.header-modal__username {
+    margin: 0;
+    font-family: "CabinetGrotesk", Arial, Helvetica;
+    font-size: 20px;
+    
+}
+
+.header-modal__close-btn {
+    position: absolute;
+    top: 11px;
+    right: 11.39px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color: #fff;
+    max-height: 21.41px;
+    width: 21.21px;
+}

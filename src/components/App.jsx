@@ -7,8 +7,7 @@ import Footer from "./Footer"
 import ModalWithForm from "./ModalWithForm";
 import ItemModal from "./ItemModal"
 import { getWeather, filterWeatherData } from "../utils/weatherApi";
-import { coordinates } from "../utils/constants";
-import { APIkey } from "../utils/constants";
+import { coordinates, APIkey } from "../utils/constants";
 import { defaultClothingItems } from "../utils/clothingItems.js"
 
 function App() {
@@ -16,7 +15,19 @@ function App() {
   const [activeModal, setActiveModal] = useState("")
   const [selectedCard, setSelectedCard] = useState({})
   const [clothingItems, setClothingItems] = useState(defaultClothingItems)
+  const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false)
 
+
+  const toggleMobileMenu = () => {
+    if (!isMobileMenuOpened) {
+      setActiveModal("mobile")
+      setIsMobileMenuOpened(true)
+    } else {
+      setActiveModal("")
+      setIsMobileMenuOpened(false)
+    }
+
+  }
 
   const handleCardPreview = (card) => {
     document.addEventListener("keydown", escape)
@@ -52,7 +63,7 @@ function App() {
   return (
     <div className="page">
       <div className="page__content">
-        <Header handleAddGarment={handleAddGarment} weatherData={weatherData} />
+        <Header activeModal={activeModal} handleAddGarment={handleAddGarment} weatherData={weatherData} toggleMobileMenu={toggleMobileMenu}/>
         <Main weatherData={weatherData} handleCardPreview={handleCardPreview} defaultClothingItems={clothingItems} />
         <Footer />
       </div>

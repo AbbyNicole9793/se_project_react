@@ -27,3 +27,19 @@
     width: 323px;
     max-height: 326px;
 }
+
+@media screen and (max-width: 750px) {
+    .card {
+        width: 162px;
+        max-height: 162px;
+    }
+
+    .card__image {
+        width: 100%;
+    }
+
+    .card__name {
+        top: 7px;
+        left: 44px;
+    }
+}

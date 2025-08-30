@@ -5,6 +5,10 @@
     font-weight: 700;
 }
 
+.cards {
+    margin-top: 40px;
+}
+
 .cards__text {
     font-family: "cabinetGrotesk", Arial, Helvetica;
     font-size: 20px;
@@ -19,3 +23,20 @@
     padding: 0;
 }
 
+@media screen and (max-width: 750px) {
+    
+    .cards {
+        margin: 40px 0 0 0;
+    }
+
+    .cards__text {
+        margin: 0 auto 20px;
+        max-width: 343px;
+    }
+
+    .cards__list {
+        max-width: 343px;
+        gap: 15px;
+        margin: 0 auto;
+    }
+}

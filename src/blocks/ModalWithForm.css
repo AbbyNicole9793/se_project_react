@@ -106,3 +106,19 @@
     font-family: "cabinetGrotesk", Arial, Helvetica;
     border-radius: 4px;
 }
+
+@media screen and (max-width: 750px) {
+    
+
+    .modal__content {
+        max-width: 375px;
+        max-height: 455px;
+        margin: 0 auto;
+        position: absolute;
+        top: 367px;
+        border-radius: 0;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+    
+}
