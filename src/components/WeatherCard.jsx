@@ -1,5 +1,5 @@
 import {weatherOptions} from "../utils/constants"
-import "../blocks/weatherCard.css"
+import "../blocks/WeatherCard.css"
 
 function WeatherCard({weatherData}) {
 
