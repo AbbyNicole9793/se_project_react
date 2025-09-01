@@ -6,8 +6,6 @@ import modalClose from "../images/modalClose.svg"
 
 function HeaderModal({handleAddGarment, activeModal, toggleMobileMenu}) {
     return (
-        <>
-        
         <div className={`modal ${activeModal === "mobile" ? "modal_is-opened" : ""} header__modal`}>
             <div className="header-modal__block-secondary">
                 <button type="button" className="header-modal__button" onClick={handleAddGarment}>+ Add clothes</button>
@@ -20,7 +18,6 @@ function HeaderModal({handleAddGarment, activeModal, toggleMobileMenu}) {
                 <img className="header-modal__close" src={modalClose} alt="close"/>
             </button>
         </div>
-        </>
     )
 }
 

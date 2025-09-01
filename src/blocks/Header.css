@@ -71,17 +71,22 @@
 }
 
 @media screen and (max-width: 750px) {
-    
+
+
     .header {
         width: 343px;
         margin: 0 auto;
     }
 
     .header__block {
-        margin: 20px 0 0 0;
+        margin: 0;
       flex-direction: column;
       gap: 34px;
       align-items: flex-start;
+    }
+
+    .header__logo {
+        margin-top: 20px;
     }
 
    .header__block-secondary {
@@ -91,10 +96,11 @@
    .header__open-modal {
       visibility: visible;
       position: absolute;
-      top: 18px;
-      right: 0;
+      top: 10px;
+      right: -10px;
       border: none;
       background-color: #f3f3f3;
       border-radius: 10px;
+      padding: 0;
    }
 }

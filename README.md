@@ -10,10 +10,10 @@ This site is designed to determine what clothes are suitable to wear with what w
 
 Npm, react, jsx, js, html & css. I also used external hardware to make this easier to do by using two screens!
 
-# Plans to improve project
-
-I am currently working on doing the optional work while waiting to hear from my review!
-
 # Link to deployed site
 
 https://abbynicole9793.github.io/se_project_react/
+
+# Plans to improve project
+
+I am having trouble getting the header__modal-button to work right, I would love to get some feedback on it if I can, I tried using space-between while creating another div and that did not work.
