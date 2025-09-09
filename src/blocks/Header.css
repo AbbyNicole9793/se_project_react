@@ -35,8 +35,10 @@
     right: 0;
 }
 
+
+
 .header__button {
-    margin-left: auto;
+    margin-left: 20px;
     border: none;
     font-family: "CabinetGrotesk", Arial, Helvetica;
     font-size: 20px;
@@ -76,6 +78,7 @@
     .header {
         width: 343px;
         margin: 0 auto;
+        position: relative
     }
 
     .header__block {

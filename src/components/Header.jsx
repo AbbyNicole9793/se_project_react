@@ -4,6 +4,7 @@ import avatar from "../images/avatar.svg";
 import { currentDate } from "../utils/constants";
 import modalButton from "../images/modalButton.svg";
 import HeaderModal from "./HeaderModal";
+import ToggleSwitch from "./ToggleSwitch"
 
 function Header({
   handleAddGarment,
@@ -18,19 +19,10 @@ function Header({
           <p className="header__paragraph">
             {currentDate}/ {weatherData.city}
           </p>
-        <button
-          type="button"
-          className="header__open-modal"
-          onClick={toggleMobileMenu}
-        >
-          <img
-            className="header__modal-button"
-            src={modalButton}
-            alt="modal-button"
-          />
-        </button>
+        
       </div>
       <div className="header__block-secondary">
+        <ToggleSwitch />
         <button
           type="button"
           className="header__button"
@@ -43,6 +35,17 @@ function Header({
           <img className="header__avatar" src={avatar} alt="avatar" />
         </div>
       </div>
+      <button
+          type="button"
+          className="header__open-modal"
+          onClick={toggleMobileMenu}
+        >
+          <img
+            className="header__modal-button"
+            src={modalButton}
+            alt="modal-button"
+          />
+        </button>
 
       <HeaderModal
         activeModal={activeModal}
