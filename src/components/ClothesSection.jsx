@@ -1,11 +1,12 @@
 import ItemCard from "./ItemCard.jsx"
 import "../blocks/ClothesSection.css"
 
-function ClothesSection( {handleCardPreview, clothingItems}) {
-    return <div className="clothes">
+function ClothesSection( {handleCardPreview, clothingItems, handleAddGarment}) {
+    return (<div className="clothes">
         <div className="clothes__section">
             <p className="clothes__tag">Your items</p>
-            <button className="clothes__button">+ Add New</button>
+            <button className="clothes__button" onClick={handleAddGarment}>+ Add New</button>
+            
         </div>
          <ul className="clothes-section__items">
           {clothingItems
@@ -20,7 +21,7 @@ function ClothesSection( {handleCardPreview, clothingItems}) {
             )
             })}
         </ul>
-    </div>
+    </div>)
 }
 
 export default ClothesSection

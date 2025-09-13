@@ -45,9 +45,11 @@ function App() {
   };
 
   const onAddItem = (data) => {
-
-    setClothingItems([...clothingItems, data])
-    closeModal()
+    postItems(data)
+      .then((newItem) => {setClothingItems(clothingItems => [...clothingItems, newItem])
+        closeModal()
+      })
+      .catch(console.error)
   }
 
   useEffect(() => {
@@ -77,9 +79,12 @@ function App() {
   };
 
   const deleteCard = () => {
-    setClothingItems((cardItems) =>
-      cardItems.filter((item) => item._id !== selectedCard._id))
-    closeModal(activeModal)
+    deleteItems(selectedCard._id) 
+      .then(setClothingItems((cardItems) =>
+      cardItems.filter((item) => item._id !== selectedCard._id)))
+      .then(closeModal(activeModal))
+      .catch(console.error)
+    
   }
 
   useEffect(() => {
@@ -98,26 +103,6 @@ function App() {
     })
     .catch(console.error)
  }, [])
-
- useEffect(() => {
-  postItems()
-    .then((data) => {
-      setClothingItems(data)
-    })
-    .catch(console.error)
- }, [])
-
- useEffect(() => {
-  deleteItems()
-    .then((data) => {
-      setClothingItems(data)
-    })
-    .catch(console.error)
- }, [])
-
-  // useEffect(() => {
-  //   setClothingItems(defaultClothingItems);
-  // }, []);
 
   return (
     <CurrentTemperatureUnitContext.Provider
@@ -140,6 +125,7 @@ function App() {
             <Route path="/profile" element={<Profile
             handleCardPreview={handleCardPreview}
             clothingItems={clothingItems}
+            handleAddGarment={handleAddGarment}
 />}/>
           
           </Routes>
