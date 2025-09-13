@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "cabinetGrotesk";
+    src: url("../fonts/cabinet-grotesk-webfont/CabinetGrotesk-Bold.woff");
+    font-weight: 700;
+}
+
+.clothes__section {
+    display: flex;
+}
+
+.clothes__tag {
+    font-family: "cabinetGrotesk", Arial, Helvetica;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.clothes__button {
+    border: none;
+    font-family: "cabinetGrotesk", Arial, Helvetica;
+    font-size: 20px;
+    background-color: #f3f3f3;
+}
+
+.clothes-section__items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0;
+}

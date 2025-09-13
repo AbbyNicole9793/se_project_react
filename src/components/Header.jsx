@@ -5,6 +5,7 @@ import { currentDate } from "../utils/constants";
 import modalButton from "../images/modalButton.svg";
 import HeaderModal from "./HeaderModal";
 import ToggleSwitch from "./ToggleSwitch"
+import { Link } from "react-router-dom"
 
 function Header({
   handleAddGarment,
@@ -15,7 +16,9 @@ function Header({
   return (
     <header className="header">
       <div className="header__block">
+          <Link to="/se_project_react/">
           <img className="header__logo" src={logo} alt="App logo"></img>
+          </Link>
           <p className="header__paragraph">
             {currentDate}/ {weatherData.city}
           </p>
@@ -30,10 +33,12 @@ function Header({
         >
           + Add clothes
         </button>
+        <Link to="/se_project_react/profile" className="header__link">
         <div className="header__user-container">
           <p className="header__username">Terrence Tegegne</p>
           <img className="header__avatar" src={avatar} alt="avatar" />
         </div>
+        </Link>
       </div>
       <button
           type="button"

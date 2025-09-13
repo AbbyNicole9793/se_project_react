@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "cabinetGrotesk";
+    src: url("../fonts/cabinet-grotesk-webfont/CabinetGrotesk-Bold.woff");
+    font-weight: 700;
+}
+
+.sidebar {
+    display: flex;
+    margin-right: 116px;
+    gap: 15px;
+}
+
+.sidebar__username {
+    width: 157px;
+    font-family: "cabinetGrotesk", Arial, Helvetica;
+    font-size: 20px;
+}

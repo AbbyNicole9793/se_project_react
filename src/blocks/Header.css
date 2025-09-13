@@ -46,6 +46,11 @@
     background-color: #f3f3f3;
 }
 
+.header__link {
+    text-decoration: none;
+    color: #000;
+}
+
 .header__user-container {
     display: flex;
     align-items: center;

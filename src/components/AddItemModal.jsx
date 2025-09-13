@@ -3,10 +3,11 @@ import { useForm } from "../hooks/useForm.js"
 
 const AddItemModal = ({ isOpen, onAddItem, closeModal }) => {
     const defaultValues = { name: "", link: "", weather: ""}
-    const {values, handleChange} = useForm(defaultValues)
+    const {values, handleChange, setValues} = useForm(defaultValues)
     const handleSubmit = (e) => {
         e.preventDefault()
         onAddItem(values)
+        setValues(defaultValues)
     }
     
   return (
@@ -56,6 +57,7 @@ const AddItemModal = ({ isOpen, onAddItem, closeModal }) => {
                 name="weather"
                 value="hot"
                 type="radio"
+                checked={values.weather === "hot"}
                 className="modal__input-radio"
                 onChange={handleChange}
               ></input>
@@ -70,6 +72,7 @@ const AddItemModal = ({ isOpen, onAddItem, closeModal }) => {
                 name="weather"
                 value="warm"
                 type="radio"
+                checked={values.weather === "warm"}
                 className="modal__input-radio"
                 onChange={handleChange}
               ></input>
@@ -84,6 +87,7 @@ const AddItemModal = ({ isOpen, onAddItem, closeModal }) => {
                 name="weather"
                 value="cold"
                 type="radio"
+                checked={values.weather === "cold"}
                 className="modal__input-radio"
                 onChange={handleChange}
               ></input>
