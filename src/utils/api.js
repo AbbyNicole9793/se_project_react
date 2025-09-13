@@ -7,4 +7,16 @@ function getItems() {
     })
 }
 
-export { getItems }
+function postItems(itemId) {
+    return fetch(`${baseUrl}/items/${itemId}`, {method: "POST"})
+    .then((res) => 
+    res.ok ? res.json() : Promise.reject(`Error: ${res.status}`))
+}
+
+function deleteItems(itemId) {
+    return fetch(`${baseUrl}items/${itemId}`, {method: "DELETE"})
+    .then((res) => 
+    res.ok ? res.json() : Promise.reject(`Error: ${res.status}`))
+}
+
+export { getItems, postItems, deleteItems }

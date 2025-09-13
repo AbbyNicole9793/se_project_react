@@ -8,11 +8,10 @@ import Footer from "./Footer";
 import ItemModal from "./ItemModal";
 import { getWeather, filterWeatherData } from "../utils/weatherApi";
 import { coordinates, APIkey } from "../utils/constants";
-import { defaultClothingItems } from "../utils/clothingItems.js";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext.jsx";
 import AddItemModal from "./AddItemModal.jsx"
 import Profile from "./Profile.jsx";
-import {getItems} from "../utils/api.js"
+import {getItems, postItems, deleteItems} from "../utils/api.js"
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -22,7 +21,7 @@ function App() {
   });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  const [clothingItems, setClothingItems] = useState([]);
   const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   
@@ -100,9 +99,25 @@ function App() {
     .catch(console.error)
  }, [])
 
-  useEffect(() => {
-    setClothingItems(defaultClothingItems);
-  }, []);
+ useEffect(() => {
+  postItems()
+    .then((data) => {
+      setClothingItems(data)
+    })
+    .catch(console.error)
+ }, [])
+
+ useEffect(() => {
+  deleteItems()
+    .then((data) => {
+      setClothingItems(data)
+    })
+    .catch(console.error)
+ }, [])
+
+  // useEffect(() => {
+  //   setClothingItems(defaultClothingItems);
+  // }, []);
 
   return (
     <CurrentTemperatureUnitContext.Provider
@@ -124,6 +139,7 @@ function App() {
           />} />
             <Route path="/se_project_react/profile" element={<Profile
             handleCardPreview={handleCardPreview}
+            clothingItems={clothingItems}
 />}/>
           
           </Routes>

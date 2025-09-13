@@ -10,7 +10,7 @@ function ItemModal({activeModal, selectedCard, closeModal, deleteCard}) {
                     <img src={modalClose} alt="Close preview modal" className="modal__close-btn" onClick={closeModal}>
                     </img>
                 </button>
-                <img src={selectedCard.link} alt={selectedCard.name} className="modal__image" />
+                <img src={selectedCard.imageUrl} alt={selectedCard.name} className="modal__image" />
                 <div className="modal__footer">
                     <div className="modal__footer-block" >
                         <h2 className="modal__caption">{selectedCard.name}</h2>

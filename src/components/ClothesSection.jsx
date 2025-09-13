@@ -1,16 +1,16 @@
 import ItemCard from "./ItemCard.jsx"
-import { defaultClothingItems } from "../utils/clothingItems.js"
 import "../blocks/ClothesSection.css"
 
-function ClothesSection( {handleCardPreview}) {
+function ClothesSection( {handleCardPreview, clothingItems}) {
     return <div className="clothes">
         <div className="clothes__section">
             <p className="clothes__tag">Your items</p>
             <button className="clothes__button">+ Add New</button>
         </div>
          <ul className="clothes-section__items">
-          {defaultClothingItems
+          {clothingItems
             .map((item) => {
+                console.log(item)
                 return (
                 <ItemCard
                   key={item._id}
