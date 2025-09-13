@@ -1,6 +1,6 @@
 import SideBar from "./SideBar"
 import ClothesSection from "./ClothesSection"
-import "../blocks/profile.css"
+import "../blocks/Profile.css"
 
 function Profile({ handleCardPreview, clothingItems }) {
     return <div className="profile">
