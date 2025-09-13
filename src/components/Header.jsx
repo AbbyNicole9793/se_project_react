@@ -16,7 +16,7 @@ function Header({
   return (
     <header className="header">
       <div className="header__block">
-          <Link to="/se_project_react/">
+          <Link to="/">
           <img className="header__logo" src={logo} alt="App logo"></img>
           </Link>
           <p className="header__paragraph">
@@ -33,7 +33,7 @@ function Header({
         >
           + Add clothes
         </button>
-        <Link to="/se_project_react/profile" className="header__link">
+        <Link to="/profile" className="header__link">
         <div className="header__user-container">
           <p className="header__username">Terrence Tegegne</p>
           <img className="header__avatar" src={avatar} alt="avatar" />
