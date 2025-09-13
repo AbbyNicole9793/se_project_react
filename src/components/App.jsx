@@ -132,12 +132,12 @@ function App() {
             toggleMobileMenu={toggleMobileMenu}
           />
           <Routes>
-            <Route path="/se_project_react/" element={<Main
+            <Route path="/" element={<Main
             weatherData={weatherData}
             handleCardPreview={handleCardPreview}
             defaultClothingItems={clothingItems}
           />} />
-            <Route path="/se_project_react/profile" element={<Profile
+            <Route path="/profile" element={<Profile
             handleCardPreview={handleCardPreview}
             clothingItems={clothingItems}
 />}/>
