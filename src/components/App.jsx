@@ -46,7 +46,7 @@ function App() {
 
   const onAddItem = (data) => {
     postItems(data)
-      .then((newItem) => {setClothingItems(clothingItems => [...clothingItems, newItem])
+      .then((newItem) => {setClothingItems(clothingItems => [newItem, ...clothingItems])
         closeModal()
       })
       .catch(console.error)
@@ -80,9 +80,12 @@ function App() {
 
   const deleteCard = () => {
     deleteItems(selectedCard._id) 
-      .then(setClothingItems((cardItems) =>
-      cardItems.filter((item) => item._id !== selectedCard._id)))
-      .then(closeModal(activeModal))
+      .then(() => {
+        setClothingItems((cardItems) => 
+        cardItems.filter((item) => item._id !== selectedCard._id)
+      )
+      closeModal()
+      })
       .catch(console.error)
     
   }

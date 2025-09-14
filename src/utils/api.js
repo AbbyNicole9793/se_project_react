@@ -1,10 +1,12 @@
 const baseUrl = 'http://localhost:3001'
 
+export function checkResponse(res) {
+  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`)
+}
+
 function getItems() {
     return fetch(`${baseUrl}/items`)
-    .then((res) => {
-        return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`)
-    })
+    .then(checkResponse)
 }
 
 function postItems(data) {
@@ -13,17 +15,15 @@ function postItems(data) {
       "Content-Type": "application/json"
     },
         body: JSON.stringify({
-        data
+        ...data
     })
     })
-    .then((res) => 
-    res.ok ? res.json() : Promise.reject(`Error: ${res.status}`))
+    .then(checkResponse)
 }
 
 function deleteItems(itemId) {
     return fetch(`${baseUrl}/items/${itemId}`, {method: "DELETE"})
-    .then((res) => 
-    res.ok ? res.json() : Promise.reject(`Error: ${res.status}`))
+    .then(checkResponse)
 }
 
 export { getItems, postItems, deleteItems }

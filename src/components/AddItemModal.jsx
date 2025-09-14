@@ -2,13 +2,16 @@ import ModalWithForm from "./ModalWithForm.jsx"
 import { useForm } from "../hooks/useForm.js"
 
 const AddItemModal = ({ isOpen, onAddItem, closeModal }) => {
-    const defaultValues = { name: "", link: "", weather: ""}
+    const defaultValues = { name: "", imageUrl: "", weather: ""}
     const {values, handleChange, setValues} = useForm(defaultValues)
     const handleSubmit = (e) => {
         e.preventDefault()
         onAddItem(values)
-        setValues(defaultValues)
     }
+
+    useEffect(() => {
+      setValues(defaultValues)
+    }, [isOpen])
     
   return (
     <ModalWithForm
