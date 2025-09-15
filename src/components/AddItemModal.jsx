@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import ModalWithForm from "./ModalWithForm.jsx"
 import { useForm } from "../hooks/useForm.js"
 
@@ -40,12 +42,12 @@ const AddItemModal = ({ isOpen, onAddItem, closeModal }) => {
             Image {""}
             <input
               type="url"
-              name="link"
+              name="imageUrl"
               className="modal__input"
               id="imageUrl"
               placeholder="Image URL"
               required
-              value={values.link}
+              value={values.imageUrl}
               onChange={handleChange}
             ></input>
           </label>
