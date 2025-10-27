@@ -69,3 +69,5 @@ export const weatherOptions = [
         url: new URL("../images/stormNight.svg", import.meta.url).href,
     },
 ]
+
+export const baseUrl = 'http://localhost:3001'

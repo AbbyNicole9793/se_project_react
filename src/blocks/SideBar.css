@@ -6,12 +6,30 @@
 
 .sidebar {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar__first-block {
+    display: flex;
     margin-right: 116px;
     gap: 15px;
 }
 
 .sidebar__username {
     width: 157px;
+    font-family: "cabinetGrotesk", Arial, Helvetica;
+    font-size: 20px;
+}
+
+.sidebar__edit-button {
+    border: none;
+    font-family: "cabinetGrotesk", Arial, Helvetica;
+    font-size: 20px;
+}
+
+.sidebar__logout {
+    border: none;
     font-family: "cabinetGrotesk", Arial, Helvetica;
     font-size: 20px;
 }
