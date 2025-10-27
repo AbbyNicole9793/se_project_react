@@ -5,10 +5,17 @@ import CurrentUserContext from "../contexts/CurrentUserContext"
 
 function SideBar({setActiveModal, handleLogout}) {
     const currentUser = useContext(CurrentUserContext)
+    const userInitial = currentUser?.name
+    ? currentUser.name.charAt(0).toUpperCase()
+    : "";
 
     return (<div className="sidebar">
         <div className="sidebar__first-block">
-        <img className="sidebar__avatar" src={currentUser?.avatar || avatar} alt={currentUser?.name || "User avatar"} />
+        {currentUser?.avatar ? (
+                  <img className="sidebar__avatar" src={currentUser.avatar} alt={currentUser.name} />
+                ) : (<div className="sidebar__avatar-placeholder">
+                  {userInitial}
+                </div>)}
         <p className="sidebar__username">{currentUser?.name || "Anonymous User"}</p>
         </div>
         <button

@@ -23,13 +23,13 @@ const LoginModal = ({ isOpen, onLogin, closeModal }) => {
           isOpen={isOpen}
           onSubmit={handleSubmit}
         >
-          <label htmlFor="email" className="modal__label">
+          <label htmlFor="login-email" className="modal__label">
             Email {""}
             <input
               type="email"
               name="email"
               className="modal__input"
-              id="email"
+              id="login-email"
               placeholder="Email"
               required
               value={values.email}

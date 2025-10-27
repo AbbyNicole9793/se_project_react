@@ -1,8 +1,6 @@
 import {baseUrl} from "./constants"
+import { checkResponse } from "./api"
 
-export function checkResponse(res) {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`)
-}
 
 function signUp({ email, password, name, avatar }) {
     return fetch(`${baseUrl}/signup`, {

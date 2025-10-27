@@ -1,4 +1,4 @@
-import {weatherOptions} from "../utils/constants"
+import {matchedWeatherOptions} from "../utils/constants"
 import "../blocks/WeatherCard.css"
 import { useContext } from "react"
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext.jsx"
@@ -8,7 +8,7 @@ function WeatherCard({weatherData}) {
         CurrentTemperatureUnitContext
       );
 
-      const weatherOption = weatherOptions.filter((option) => {
+      const weatherOption = matchedWeatherOptions.filter((option) => {
         return option.day === weatherData.isDay && 
         option.condition === weatherData.condition
     })

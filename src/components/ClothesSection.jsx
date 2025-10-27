@@ -4,7 +4,7 @@ import ItemCard from "./ItemCard.jsx"
 import "../blocks/ClothesSection.css"
 import CurrentUserContext from "../contexts/CurrentUserContext.jsx"
 
-function ClothesSection( {handleCardPreview, clothingItems, handleAddGarment}) {
+function ClothesSection( {handleCardPreview, clothingItems, handleAddGarment, onCardLike}) {
     const currentUser = useContext(CurrentUserContext);
 
     return (<div className="clothes">
@@ -17,12 +17,12 @@ function ClothesSection( {handleCardPreview, clothingItems, handleAddGarment}) {
           {clothingItems
             .filter((item) => item.owner === currentUser?._id)
             .map((item) => {
-                console.log(item)
                 return (
                 <ItemCard
                   key={item._id}
                   item={item}
                   handleCardPreview={handleCardPreview}
+                  onCardLike={onCardLike}
                 />
             )
             })}

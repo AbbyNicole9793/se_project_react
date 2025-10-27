@@ -8,11 +8,11 @@ import Main from "./Main";
 import Footer from "./Footer";
 import ItemModal from "./ItemModal";
 import { getWeather, filterWeatherData } from "../utils/weatherApi";
-import { coordinates, APIkey } from "../utils/constants";
+import { coordinates, apiKey } from "../utils/constants";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext.jsx";
 import AddItemModal from "./AddItemModal.jsx"
 import Profile from "./Profile.jsx";
-import { getItems, postItems, deleteItems, updateProfile, addCardLike, removeCardLike } from "../utils/api.js"
+import { getItems, postItems, deleteItem, updateProfile, addCardLike, removeCardLike } from "../utils/api.js"
 import RegisterModal from "./RegisterModal";
 import LoginModal from "./LoginModal";
 import ProtectedRoute from "./ProtectedRoute";
@@ -63,7 +63,7 @@ function App() {
         setToken(res.token)
         setIsLoggedIn(true);
         setActiveModal("")
-        navigate("/profile")
+        navigate("/")
       })
       .catch((err) => {
         console.error("Login error:", err);
@@ -106,7 +106,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-  if (!token) return;
 
   getItems()
     .then((items) => {
@@ -187,7 +186,7 @@ function App() {
   };
 
   const deleteCard = () => {
-    deleteItems(selectedCard._id, token)
+    deleteItem(selectedCard._id, token)
       .then(() => {
         setClothingItems((cardItems) =>
           cardItems.filter((item) => item._id !== selectedCard._id)
@@ -199,7 +198,7 @@ function App() {
   }
 
   useEffect(() => {
-    getWeather(coordinates, APIkey)
+    getWeather(coordinates, apiKey)
       .then((data) => {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
@@ -239,6 +238,7 @@ function App() {
                 handleAddGarment={handleAddGarment}
                 setActiveModal={setActiveModal}
                 handleLogout={handleLogout}
+                onCardLike={handleCardLike}
               /></ProtectedRoute>} />
 
 

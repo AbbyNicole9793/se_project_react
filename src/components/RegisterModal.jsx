@@ -29,13 +29,13 @@ const RegisterModal = ({ isOpen, onRegister, closeModal }) => {
           isOpen={isOpen}
           onSubmit={handleSubmit}
         >
-          <label htmlFor="email" className="modal__label">
+          <label htmlFor="register-email" className="modal__label">
             Email* {""}
             <input
               type="email"
               name="email"
               className="modal__input"
-              id="email"
+              id="register-email"
               placeholder="Email"
               required
               value={values.email}

@@ -23,7 +23,7 @@ function postItems(data, token) {
         .then(checkResponse)
 }
 
-function deleteItems(itemId, token) {
+function deleteItem(itemId, token) {
     return fetch(`${baseUrl}/items/${itemId}`, { method: "DELETE", headers: {
       Authorization: `Bearer ${token}`, 
     }})
@@ -62,4 +62,4 @@ function updateProfile({ name, avatar }, token) {
 
 
 
-export { getItems, postItems, deleteItems, updateProfile, addCardLike, removeCardLike }
+export { getItems, postItems, deleteItem, updateProfile, addCardLike, removeCardLike }

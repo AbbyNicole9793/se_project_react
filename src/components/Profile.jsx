@@ -2,7 +2,7 @@ import SideBar from "./SideBar"
 import ClothesSection from "./ClothesSection"
 import "../blocks/Profile.css"
 
-function Profile({ handleCardPreview, clothingItems, handleAddGarment, setActiveModal, handleLogout }) {
+function Profile({ handleCardPreview, clothingItems, handleAddGarment, setActiveModal, handleLogout, onCardLike }) {
     return (<div className="profile">
         <section className="profile__sidebar">
         <SideBar setActiveModal={setActiveModal} handleLogout={handleLogout}/>
@@ -11,7 +11,8 @@ function Profile({ handleCardPreview, clothingItems, handleAddGarment, setActive
             <ClothesSection 
             handleCardPreview={handleCardPreview} 
             clothingItems={clothingItems}
-            handleAddGarment={handleAddGarment}/>
+            handleAddGarment={handleAddGarment}
+            onCardLike={onCardLike}/>
         </section>
     </div>)
 }

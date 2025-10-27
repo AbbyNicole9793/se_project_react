@@ -5,9 +5,9 @@ export const coordinates = {
     longitude: -84.922715,
 }
 
-export const APIkey = "7d654706b8e130a44679a309aab596a8"
+export const apiKey = "7d654706b8e130a44679a309aab596a8"
 
-export const weatherOptions = [
+export const matchedWeatherOptions = [
     {
         day: true,
         condition: "clear",

@@ -21,15 +21,15 @@ const AddItemModal = ({ isOpen, onAddItem, closeModal }) => {
           title="New garment"
           closeModal={closeModal}
           isOpen={isOpen}
-          onAddItem={handleSubmit}
+          onSubmit={handleSubmit}
         >
-          <label htmlFor="name" className="modal__label">
+          <label htmlFor="add-item-name" className="modal__label">
             Name {""}
             <input
               type="text"
               name="name"
               className="modal__input"
-              id="name"
+              id="add-item-name"
               placeholder="Name"
               required
               minLength="1"
