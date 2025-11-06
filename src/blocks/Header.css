@@ -83,6 +83,7 @@
 .header__avatar {
     margin-left: 12px;
     position: relative;
+    width: 40px;
 }
 
 .header__avatar-hover {

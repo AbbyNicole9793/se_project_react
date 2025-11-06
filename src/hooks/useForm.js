@@ -1,13 +1,20 @@
 import { useState } from "react" 
 
-export function useForm(defaultValues) {
-    const [values, setValues] = useState(defaultValues) 
+export function useForm(defaultValues = {}) {
+  const safeDefaults = {
+    email: "",
+    password: "",
+    name: "",
+    avatar: "",
+    ...defaultValues
+  };
 
-    function handleChange(e) {
-        const {name, value }= e.target
-        setValues({...values, [name]: value })
-    }
-    
+  const [values, setValues] = useState(safeDefaults);
 
-    return {values, setValues, handleChange}
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  }
+
+  return { values, setValues, handleChange };
 }

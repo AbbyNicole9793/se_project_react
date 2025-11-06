@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, act } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom"
 
 
@@ -19,6 +19,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import { signUp, signIn, checkValidity } from "../utils/auth";
 import CurrentUserContext from "../contexts/CurrentUserContext"
 import EditProfileModal from "./EditProfileModal.jsx";
+import DeleteModal from "./DeleteModal.jsx";
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
         setToken(res.token)
         setIsLoggedIn(true);
         setActiveModal("");
+        navigate("/")
       })
       .catch((err) => {
         console.error("Registration error:", err);
@@ -63,7 +65,7 @@ function App() {
         setToken(res.token)
         setIsLoggedIn(true);
         setActiveModal("")
-        navigate("/")
+        window.location.reload()
       })
       .catch((err) => {
         console.error("Login error:", err);
@@ -256,25 +258,36 @@ function App() {
             selectedCard={selectedCard}
             closeModal={closeModal}
             deleteCard={deleteCard}
+            setActiveModal={setActiveModal}
           />
-
+        {activeModal === "register" && (
           <RegisterModal
             isOpen={activeModal === "register"}
             onRegister={handleRegister}
             closeModal={closeModal}
+            setActiveModal={setActiveModal}
           />
-
+        )}
+        {activeModal === "login" && (
           <LoginModal
             isOpen={activeModal === "login"}
             onLogin={handleLogin}
             closeModal={closeModal}
+            setActiveModal={setActiveModal}
           />
+        )}
 
           <EditProfileModal
             isOpen={activeModal === "edit-profile"}
             onClose={closeModal}
             onEditProfile={handleEditProfile}
+            setActiveModal={setActiveModal}
           />
+
+          <DeleteModal
+            isOpen={activeModal === "delete-card"}
+            onClose={closeModal}
+            onDelete={deleteCard}/>
         </div>
 
       </CurrentTemperatureUnitContext.Provider>

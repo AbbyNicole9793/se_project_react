@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "cabinetGrotesk";
+    src: url("../fonts/cabinet-grotesk-webfont/CabinetGrotesk-Bold.woff");
+    font-weight: 700;
+}
+
+.delete-modal .modal__content {
+    padding: 60px;
+}
+
+.delete-modal .delete-modal__confirmation-text {
+    font-family: "cabinetGrotesk", Arial, Helvetica;
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 0 0 40px 0;
+    color: #000;
+    text-align: center;
+}
+
+.delete-modal .modal__submit-btns {
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-modal .modal__delete-btn {
+  color: #FF4D00;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  font-family: "cabinetGrotesk", Arial, Helvetica;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+.delete-modal .modal__secondary-btn {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: "cabinetGrotesk", Arial, Helvetica;
+  font-size: 20px;
+  line-height: 24px;
+  opacity: 100%;
+}

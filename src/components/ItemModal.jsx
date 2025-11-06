@@ -5,7 +5,7 @@ import "../blocks/ModalWithForm.css"
 import modalClose from "../images/modalCloseWhite.svg"
 import CurrentUserContext from "../contexts/CurrentUserContext"
 
-function ItemModal({ activeModal, selectedCard, closeModal, deleteCard }) {
+function ItemModal({ activeModal, selectedCard, closeModal, setActiveModal}) {
     const currentUser = useContext(CurrentUserContext);
 
     const isLoggedIn = !!currentUser; 
@@ -32,7 +32,9 @@ function ItemModal({ activeModal, selectedCard, closeModal, deleteCard }) {
                 <div className="modal__footer">
                     <div className="modal__footer-block" >
                         <h2 className="modal__caption">{selectedCard.name}</h2>
-                        <button type="button" className={itemDeleteButtonClassName} onClick={deleteCard}>Delete Item</button>
+                        {isOwn && (
+                        <button type="button" className={itemDeleteButtonClassName} onClick={() => setActiveModal("delete-card")}>Delete Item</button>
+                        )}
                     </div>
                     <p className="modal__weather">Weather: {selectedCard.weather}</p>
                 </div>

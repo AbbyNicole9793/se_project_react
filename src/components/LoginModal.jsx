@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import ModalWithForm from "./ModalWithForm.jsx"
 import { useForm } from "../hooks/useForm.js"
 
-const LoginModal = ({ isOpen, onLogin, closeModal }) => {
+const LoginModal = ({ isOpen, onLogin, closeModal, setActiveModal }) => {
     const defaultValues = { email: "", password: ""}
     const {values, handleChange, setValues} = useForm(defaultValues)
     const handleSubmit = (e) => {
@@ -18,10 +18,12 @@ const LoginModal = ({ isOpen, onLogin, closeModal }) => {
   return (
     <ModalWithForm
           buttonText="Log In"
+          secondaryButtonText="or Register"
           title="Log In"
           closeModal={closeModal}
           isOpen={isOpen}
           onSubmit={handleSubmit}
+          onSecondaryButtonClick={() => setActiveModal("register")}
         >
           <label htmlFor="login-email" className="modal__label">
             Email {""}
@@ -36,13 +38,13 @@ const LoginModal = ({ isOpen, onLogin, closeModal }) => {
               onChange={handleChange}
             ></input>
           </label>
-          <label htmlFor="password" className="modal__label">
+          <label htmlFor="login-password" className="modal__label">
             Password {""}
             <input
               type="password"
               name="password"
               className="modal__input"
-              id="password"
+              id="login-password"
               placeholder="Password"
               required
               value={values.password}
@@ -50,6 +52,7 @@ const LoginModal = ({ isOpen, onLogin, closeModal }) => {
             ></input>
           </label>
         </ModalWithForm>
+        
   );
 };
 
