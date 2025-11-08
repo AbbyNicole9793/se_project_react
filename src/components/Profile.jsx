@@ -5,14 +5,14 @@ import "../blocks/Profile.css"
 function Profile({ handleCardPreview, clothingItems, handleAddGarment, setActiveModal, handleLogout, onCardLike }) {
     return (<div className="profile">
         <section className="profile__sidebar">
-        <SideBar setActiveModal={setActiveModal} handleLogout={handleLogout}/>
+            <SideBar setActiveModal={setActiveModal} handleLogout={handleLogout} />
         </section>
         <section className="profile__clothing-items">
-            <ClothesSection 
-            handleCardPreview={handleCardPreview} 
-            clothingItems={clothingItems}
-            handleAddGarment={handleAddGarment}
-            onCardLike={onCardLike}/>
+            <ClothesSection
+                handleCardPreview={handleCardPreview}
+                clothingItems={clothingItems}
+                handleAddGarment={handleAddGarment}
+                onCardLike={onCardLike} />
         </section>
     </div>)
 }

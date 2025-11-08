@@ -32,8 +32,9 @@ function deleteItem(itemId, token) {
 
 function addCardLike(id, token) {
   return fetch(`${baseUrl}/items/${id}/likes`, {
-    method: "PUT", // 💡 PUT adds a like
+    method: "PUT",
     headers: {
+       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
   }).then(checkResponse);
@@ -41,8 +42,9 @@ function addCardLike(id, token) {
 
 function removeCardLike(id, token) {
   return fetch(`${baseUrl}/items/${id}/likes`, {
-    method: "DELETE", // 💡 DELETE removes a like
+    method: "DELETE",
     headers: {
+       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
   }).then(checkResponse);

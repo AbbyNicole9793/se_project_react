@@ -49,7 +49,7 @@ function App() {
         localStorage.setItem("jwt", res.token);
         setToken(res.token)
         setIsLoggedIn(true);
-        setActiveModal("");
+        closeModal()
         navigate("/")
       })
       .catch((err) => {
@@ -63,9 +63,20 @@ function App() {
       .then((res) => {
         localStorage.setItem("jwt", res.token);
         setToken(res.token)
-        setIsLoggedIn(true);
-        setActiveModal("")
-        window.location.reload()
+        closeModal()
+        const token = localStorage.getItem("jwt")
+        if (token) {
+          checkValidity(token)
+          .then((data) => {
+            setIsLoggedIn(true)
+            setToken(token)
+            setCurrentUser(data)
+          })
+          .catch((err) => {
+            console.error("Invalid token:", err)
+            handleLogout()
+          })
+        }
       })
       .catch((err) => {
         console.error("Login error:", err);
@@ -147,7 +158,7 @@ function App() {
       setActiveModal("mobile");
       setIsMobileMenuOpened(true);
     } else {
-      setActiveModal("");
+      closeModal()
       setIsMobileMenuOpened(false);
     }
   };

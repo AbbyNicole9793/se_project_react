@@ -28,6 +28,22 @@
     max-height: 326px;
 }
 
+.card__like-button {
+    position: absolute;
+    top: 15px;
+    right: 112px;
+    background: url("../images/like.svg") no-repeat center;
+    background-size: contain;
+    height: 15px;
+    width: 18px;
+    border: none;
+
+}
+
+.card__like-button_active {
+    background: url("../images/liked.svg") no-repeat center;
+}
+
 @media screen and (max-width: 750px) {
     .card {
         width: 162px;
