@@ -153,6 +153,18 @@ function App() {
     }
   };
 
+  useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth > 750 && activeModal === "mobile") {
+      closeModal();
+      setIsMobileMenuOpened(false);
+    }
+  };
+
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, [activeModal]);
+
   const toggleMobileMenu = () => {
     if (!isMobileMenuOpened) {
       setActiveModal("mobile");
@@ -162,6 +174,8 @@ function App() {
       setIsMobileMenuOpened(false);
     }
   };
+
+  
 
   const onAddItem = (data) => {
     postItems(data, token)

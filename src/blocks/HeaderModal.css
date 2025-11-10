@@ -1,5 +1,4 @@
 
-
 .header__modal {
     width: 343px;
     max-height: 208px;
@@ -40,6 +39,10 @@
     font-family: "CabinetGrotesk", Arial, Helvetica;
     font-size: 20px;
     
+}
+
+.header-modal__avatar {
+    width: 40px;
 }
 
 .header-modal__close-btn {

@@ -25,7 +25,7 @@
     border-radius: 19px;
     border: 1px;
     width: 323px;
-    max-height: 326px;
+    height: 326px;
 }
 
 .card__like-button {
@@ -41,7 +41,12 @@
 }
 
 .card__like-button_active {
-    background: url("../images/liked.svg") no-repeat center;
+    background: url("../images/liked.png") no-repeat center;
+    background-size: contain;
+    border: none;
+    height: 15px;
+    width: 18px;
+
 }
 
 @media screen and (max-width: 750px) {

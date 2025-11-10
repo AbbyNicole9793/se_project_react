@@ -9,7 +9,8 @@ function SideBar({ setActiveModal, handleLogout }) {
         ? currentUser.name.charAt(0).toUpperCase()
         : "";
 
-    return (<div className="sidebar">
+    return (
+        <div className="sidebar">
         <div className="sidebar__first-block">
             {currentUser?.avatar ? (
                 <img className="sidebar__avatar" src={currentUser.avatar} alt={currentUser.name} />
@@ -27,7 +28,8 @@ function SideBar({ setActiveModal, handleLogout }) {
         <button className="sidebar__logout" onClick={handleLogout} >
             Log out
         </button>
-    </div>)
+    </div>
+    )
 }
 
 export default SideBar
